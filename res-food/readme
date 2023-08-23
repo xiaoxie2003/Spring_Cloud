@@ -1,0 +1,6 @@
+业务功能：com.yc.biz.ResFoodBiz：
+        findAll（）
+        findByPage（int pageno，int pagesize）
+        findById（integer id）
+
+做相应的测试
