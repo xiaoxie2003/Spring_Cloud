@@ -1,0 +1,27 @@
+#与application.yml文件重复的可以不要
+#server:
+#  port: 8082
+#  servlet:
+#    session.timeout: 60000
+#    contextpath: /
+#
+#logging:
+#  level:
+#    org.springframework: info
+
+spring:
+  datasource:
+    # 注意这个文件用于初始化数据库的， 所以联接的是  3308,即容器中的数据库
+    url: jdbc:mysql://localhost:3308/yc125res?serverTimezone=UTC
+    username: root
+    password: a
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      schema-locations:
+        -classpath*: schema-all.sql     # DDL脚本:创建表，约束.
+      data-locations:
+        -classpath*: data-all.sql      #表中的初始数据
+      username: root
+      password: a
+      mode: ALWAYS     #*****注意它的取值,表示     使用基于脚本的初始化  第一次才Always 其他的Never

@@ -1,0 +1,27 @@
+#server:
+#  port: 8082
+#  servlet:
+#    session.timeout: 60000
+#    contextpath: /
+#
+#logging:
+#  level:
+#    org.springframework: info
+
+#本地的配置 创建数据库
+spring:
+#  datasource:
+#     产品上线后的配置
+#    url: jdbc:mysql://localhost:3308/yc125res?serverTimezone=UTC
+#    username: root
+#    password: a
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      schema-locations:
+        -classpath*: schema-all.sql     # DDL脚本:创建表，约束.
+      data-locations:
+        -classpath*: data-all.sql      #表中的初始数据
+      username: root
+      password: 4444
+      mode: ALWAYS     #*****注意它的取值,表示     使用基于脚本的初始化  第一次才Always 其他的Never
