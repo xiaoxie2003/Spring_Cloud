@@ -314,7 +314,26 @@ feign框架的原理:  几大组件:
         response:
           enabled: true
 
-
+======================================================================================
+ 流量控制:    sentinel  采集服务器运行指标      dashboard 可视化展现+console
+ 分布式链路追踪:  sleuth 采集资源调用信息     zipkin: 可视化呈现
+ 资源调用信息 :  数据结构=>
+     trace: traceid在一个调用链条中不变, 每个 资源的调用( controller中的方法，redis操作,resttemplate... )都创建一个span
+      span:   一个span要记录四个点:
+                  CS:  client sent
+                  sr: server received
+                  ss: server sent
+                  cr:   client received
+ 记录信息的代码 <= sleuth完成.   => AOP完成.
+ 1) Servlet  -> servlet  =>
+ 　　　　filter过滤器
+ 2) springMVC  中的controller
+     Interceptor
+ 3) redisTemplate
+      opsForString() 方法   =>   AOP
+ 4) jdbc:
+        pstmt.executeUpdate()
+                  .executeQuery()     ->  AOP
 
 
 

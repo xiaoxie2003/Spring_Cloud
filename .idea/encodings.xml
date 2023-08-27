@@ -10,5 +10,10 @@
     <file url="file://$PROJECT_DIR$/res-web/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test-predicate/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/testBuilderPattern/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/testFactoryMethodPattern/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/testReactor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/testsentinelHello/src/main/java" charset="UTF-8" />
   </component>
 </project>

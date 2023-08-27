@@ -16,6 +16,11 @@
         <module>res-security</module>
         <module>res-order</module>
         <module>res-api</module>
+        <module>testsentinelHello</module>
+        <module>testFactoryMethodPattern</module>
+        <module>testBuilderPattern</module>
+        <module>test-predicate</module>
+        <module>testReactor</module>
     </modules>
 
     <parent>
@@ -32,6 +37,12 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <!-- 链路追踪 sleuth和zipkin -->
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+            <version>2.2.0.RELEASE</version>
+        </dependency>
 
     </dependencies>
 
@@ -201,6 +212,13 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-pool2</artifactId>
                 <version>2.11.1</version>
+            </dependency>
+
+            <!--  bootstrap -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-bootstrap</artifactId>
+                <version>3.1.6</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
