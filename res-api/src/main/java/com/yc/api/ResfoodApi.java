@@ -21,7 +21,7 @@ public interface ResfoodApi {
 
     //Openfeign支持MVC注解
     @GetMapping("findById/{fid}")
-    public Map<String, Object> findById(@PathVariable Integer fid);
+    public Map<String, Object>  findById(@PathVariable Integer fid);
     //形成url: http://res-food/resfood/findById/1
 
     @GetMapping("findAll")
