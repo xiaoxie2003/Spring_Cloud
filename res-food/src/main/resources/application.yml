@@ -76,11 +76,36 @@ spring:
         server-addr: localhost:8848   #将此服务注册到本机的nacos中
         username: nacos               #nacos登录用户名和密码
         password: nacos
+    sentinel: #sentinel配置
+      transport:
+        port: 8719  #跟控制台交流的端口
+        dashboard: localhost:9999  #sentinel地址和端口号
+      eager: true #表示sentinel会在应用启动的时候初始化 sentinel会自动加载规则 实时监控
+  sleuth: #链路追踪
+    web:
+      client:
+        #开启采集链路
+        enabled: true
+    sampler:
+      #默认采集是 0.1 生产环境采用默认 测试环境可以修改为1.0 采集比例 多久采集一次
+      probability: 1.0
+  zipkin: #zipkin服务地址
+    base-url: http://localhost:9411/
+
+
   application:
     name: res-food  #此服务的服务名，在nacos服务器中显示，以示区分
 
+
+
 server:
   port: 9001 # 此服务器的端口（注意各服务器的端口要区分）
+  tomcat:
+    accept-count: 100  #等待队列长度 默认100
+    threads:
+      min-spare: 5  #最小工作空闲线程数 默认10
+      max: 20 #最大工作线程数 默认200
+    max-connections: 20 #最大连接数 默认10000
 
 management: # 通过actuator暴露此服务器的管理端口
   endpoints:
@@ -99,4 +124,4 @@ logging:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #开启SQL语句打印
-#  type-enums-package: com.yc.bean
+  type-enums-package: com.yc.bean

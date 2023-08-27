@@ -1,0 +1,17 @@
+#spring:
+#  cloud:
+#    nacos:
+#      config:
+#        server-addr: localhost:8848   #将此服务注册到本机的nacos中
+#        username: nacos               #nacos登录用户名和密码
+#        password: nacos
+#        namespace: yc125test
+#        group: DEFAULT_GROUP
+#        prefix: res-food
+#        file-extension: yml   #  res-food-prod
+##        shared-configs:
+##          - {dataId: mysql125.yml,refresh: true}  #yml如何表示对象的数据格式
+#  profiles:
+#    active: test
+#  application:
+#    name: res-food
