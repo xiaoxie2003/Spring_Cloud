@@ -11,10 +11,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDateTime;
@@ -84,5 +81,23 @@ public class OrderController {
         map.put("code",1);
         return map;
 
+    }
+
+    /**
+     * 支付:在这里调用银联的支付接口 所以比较慢
+     * @param flag
+     * @return
+     */
+    @GetMapping("payAction")
+    public Map<String,Object> payAction(Integer flag) throws InterruptedException {
+        //TODO:测试慢请求
+        if(flag == null){
+            //Thread.sleep(1000);
+            throw new RuntimeException("出异常啦......");
+        }
+        Map<String,Object> map = new HashMap<>();
+        //取出当前用户的订单金额 调用第三方接口 完成支付
+        map.put("code",1);
+        return map;
     }
 }
