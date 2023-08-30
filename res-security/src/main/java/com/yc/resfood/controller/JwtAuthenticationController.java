@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-@RequestMapping("resfood")
+@RequestMapping("ressecurity/resfood")
 @Api(tags = "用户登录鉴权管理")
 public class JwtAuthenticationController {
     @Autowired

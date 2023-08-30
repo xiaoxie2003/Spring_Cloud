@@ -67,7 +67,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // 关闭csrf跨站请求伪造
         httpSecurity.csrf().disable()
                 // 不验证此特定请求
-                .authorizeRequests().antMatchers("/resfood/code.action","/resfood/resuser.action","/swagger-ui/**").permitAll().
+                .authorizeRequests().antMatchers("/ressecurity/resfood/code.action","/ressecurity/resfood/resuser.action","/swagger-ui/**").permitAll().
                 // 所有其他请求都需要经过身份验证
                         anyRequest().authenticated()
                 .and().
