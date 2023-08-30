@@ -1,4 +1,4 @@
-package com.yc;
+package com.yc.resfood;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -8,7 +8,7 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@MapperScan("com.yc.dao")
+@MapperScan("com.yc.resfood.dao")
 @EnableSwagger2 //Swagger
 @EnableDiscoveryClient //启用服务注册发现的客户端:httpclient/postman
 @EnableOpenApi //开启Swagger

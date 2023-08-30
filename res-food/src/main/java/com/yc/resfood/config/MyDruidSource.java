@@ -1,4 +1,4 @@
-package com.yc.config;
+package com.yc.resfood.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import lombok.extern.slf4j.Slf4j;

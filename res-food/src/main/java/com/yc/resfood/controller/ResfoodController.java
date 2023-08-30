@@ -1,10 +1,8 @@
-package com.yc.controller;
+package com.yc.resfood.controller;
 
-import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yc.ResFood;
-import com.yc.biz.ResFoodBiz;
+import com.yc.resfood.biz.ResFoodBiz;
 import com.yc.web.model.PageBean;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;

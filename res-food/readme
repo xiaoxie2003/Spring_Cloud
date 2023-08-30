@@ -1,4 +1,4 @@
-业务功能：com.yc.biz.ResFoodBiz：
+业务功能：com.yc.resfood.biz.ResFoodBiz：
         findAll（）
         findByPage（int pageno，int pagesize）
         findById（integer id）

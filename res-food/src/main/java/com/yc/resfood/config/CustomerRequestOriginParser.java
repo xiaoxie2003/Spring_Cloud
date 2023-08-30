@@ -1,4 +1,4 @@
-package com.yc.config;
+package com.yc.resfood.config;
 
 import com.alibaba.csp.sentinel.adapter.spring.webmvc.callback.RequestOriginParser;
 import lombok.extern.slf4j.Slf4j;

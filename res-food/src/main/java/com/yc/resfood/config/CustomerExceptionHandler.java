@@ -1,4 +1,4 @@
-package com.yc.config;
+package com.yc.resfood.config;
 
 import org.springframework.core.annotation.Order;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 @ControllerAdvice  //Controller控制器IOC  advice：aop中的增强
 @Order(-10000)

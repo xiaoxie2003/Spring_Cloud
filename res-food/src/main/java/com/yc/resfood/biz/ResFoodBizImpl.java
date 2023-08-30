@@ -1,9 +1,9 @@
-package com.yc.biz;
+package com.yc.resfood.biz;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yc.ResFood;
-import com.yc.dao.ResFoodBizMapper;
+import com.yc.resfood.dao.ResFoodBizMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

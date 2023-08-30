@@ -1,6 +1,6 @@
 package com.yc;
 
-import com.yc.biz.ResFoodBiz;
+import com.yc.resfood.biz.ResFoodBiz;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
