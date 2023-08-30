@@ -1,0 +1,13 @@
+server:
+  port: 7777
+  web:
+    resources:  #springMVC指定静态页面的位置
+      static-locations: [classpath:/public/,classpath:/resources/,classpath:/META-INF/resources/,classpath:/static/]
+
+logging:
+  level:
+    root: info
+    com.yc: info
+    org.springframework.web: info
+  file:
+    path: ./web-log
