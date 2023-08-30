@@ -1,0 +1,66 @@
+server:
+  port: 20001
+
+spring:
+  application:
+    name: res-gateway
+  cloud:
+    gateway: #基础的路由转发配置
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowedOrigins: "*"
+#            allowedMethods: "*"
+#            allowedHeaders: "*"
+#            allowCredentials: true
+
+      routes: #查看配置源码
+        - id: res-makeorder
+          uri: lb://res-order
+          predicates:
+            - Path=/order/**
+        - id: res-security
+          uri: lb://res-security
+          predicates:
+            - Path=/ressecurity/**
+        - id: res-order
+          uri: lb://res-order
+          predicates:
+            - Path=/cart/**
+        - id: res-food
+          #uri: http://localhost:9001  #http://localhost:20001/resfood/findAll -> http://localhost:9001/resfood/findAll
+          uri: lb://res-food  #lb:loadbalancer 服务名res-food 负载均衡
+          predicates:
+            - Path=/resfood/**
+
+#            - After=2023-08-28T14:15:47.789-07:00[Asia/Shanghai]
+#            - ServiceTimeBetween=上午06:00,下午11:00
+#            - Method=GET,POST,DELETE
+            #- id: baidu #唯一区别的名字
+            #uri: http://www.baidu.com  #都转发到百度
+            #predicates:
+            #PathRoutePredicateFactory => PathRoutePredicate 断言
+            #- Path=/**  #表示访问此网站的路径都要路由到uri为百度的地址
+            #http://localhost:20001    200
+            #http://localhost:20001/abc   404
+            #http://www.baidu.com/abc 百度里找不到abc页面
+
+          #局部过滤器
+#          filters:
+#            - AddRequestHeader=token,123
+#            - MyTime=秒
+
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"   # "*"是暴露全部端点
+  endpoint:
+    gateway:
+      enabled: true
