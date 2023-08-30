@@ -21,6 +21,7 @@
         <module>testBuilderPattern</module>
         <module>test-predicate</module>
         <module>testReactor</module>
+        <module>res-gateway</module>
     </modules>
 
     <parent>
