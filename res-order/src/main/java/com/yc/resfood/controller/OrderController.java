@@ -47,7 +47,7 @@ public class OrderController {
         ResUser user = new ResUser();
         //将来这个useid也可以从登录信息中取出
         //String url = "http://localhost:8001/resfood/hello";
-        String url = "http://res-security/resfood/hello";
+        String url = "http://res-security/ressecurity/resfood/hello";
         //复杂的http请求
         HttpHeaders headers = new HttpHeaders(){{
             set("Authorization",bearerToken);
